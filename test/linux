@@ -1,0 +1,11 @@
+-linux command prints all lines with letter b not letter m
+grep 'b' sampledata.txt | grep -v 'm'
+
+-linux command prints only 3rd 4th lines in text file sampledata.txt
+sed -n '3,4p' sampledata.txt
+
+-linux command sends kill signal to a process with ID=93740
+kill -9 93740
+
+linux command prints process ID for process with highest memory usage
+ps aux --sort=-%mem | awk 'NR==2 {print $2}'
