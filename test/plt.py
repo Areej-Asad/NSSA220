@@ -6,23 +6,17 @@
 import matplotlib.pyplot as plt
 import numpy as np
 from random import randrange
-lst = [ randrange(1,10) for i in range(1000)]
 
-import matplotlib.pyplot as plt
-from collections import Counter
+# Generate random numbers
+lst = [randrange(1, 10) for i in range(1000)]
 
-from random import randrange
-lst = [randrange(1, 10) for _ in range(1000)]
+# Count frequencies of numbers from 1 to 9
+frequencies = [lst.count(i) for i in range(1, 10)]
 
-frequency = Counter(lst)
-
-numbers = list(frequency.keys())
-counts = list(frequency.values())
-
-plt.barh(numbers, counts, color='blue')
-
-plt.xlabel('Frequency')
-plt.ylabel('Number')
-plt.title('Frequency of Numbers (1 to 9) in Random List')
-
+# Plot the horizontal bar chart
+plt.barh(range(1, 10), frequencies, color='blue')
+plt.xlabel("Frequency")
+plt.ylabel("Number")
+plt.title("Frequency of Numbers from 1 to 9")
 plt.show()
+
